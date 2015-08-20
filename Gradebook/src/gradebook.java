@@ -29,7 +29,7 @@ public class gradebook extends HttpServlet {
 		
 		ResultSet result = null;
 		String sql = "";
-		String message2 = "";
+		String message = "";
 		int sum = 0;
 		double avg = 0;
 		
@@ -102,11 +102,13 @@ public class gradebook extends HttpServlet {
 			}
 			int counter = 0;
 			try {
+				message= "<thead><tr><th>Asignment</th><th>Grade</th></tr></thead>";
 				while(result.next()){
 				    //System.out.println("Current Date from Oracle : " +         result.getString("current_day"));
 					//System.out.printf("%s %s, %s\n",
 					sum += result.getDouble("GRADE");
 					counter++;
+					message += "<tr><td>"+result.getString("ASSIGNMENT")+"</td><td>"+result.getDouble("GRADE")+"</td></tr>\n";
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -114,15 +116,28 @@ public class gradebook extends HttpServlet {
 			}
 			avg = sum/counter; 
 			
-			System.out.println(avg);
-	    response.setContentType("text/html");
-	    
-	    
+			/*
+			try {
+				message= "<thead><tr><th>Asignment</th><th>Grade</th></tr></thead>";
+				while(result.next()){
+				    //System.out.println("Current Date from Oracle : " +         result.getString("current_day"));
+					//System.out.printf("%s %s, %s\n",
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			*/
+			
+			System.out.println(message);
+		  response.setContentType("text/html");
 	      request.setAttribute("avg", avg);
+	    
+	      request.setAttribute("message", message);
 	      getServletContext()
 	      .getRequestDispatcher("/average.jsp")
 	      .forward(request,  response);
-	    
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

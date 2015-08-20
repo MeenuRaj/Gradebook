@@ -25,5 +25,8 @@
   </div>     
 </div>
 
+<h1>The assignments and grades so far:</h1>
+<table class="table table-striped">${message}</table>
+
 </body>
 </html>

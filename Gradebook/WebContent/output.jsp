@@ -42,14 +42,14 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="assignment">Assignment:</label>
       <div class="col-sm-10">
-        <input type="assignment" class="form-control" id="assignment" name = "assignment" placeholder="Enter assignment">
+        <input type="text" class="form-control" id="assignment" name = "assignment" placeholder="Enter assignment">
       </div>
     </div>
     
     <div class="form-group">
       <label class="control-label col-sm-2" for="grade">Grade:</label>
       <div class="col-sm-10">          
-        <input type="grade" class="form-control" id="grade" name = "grade" placeholder="Enter grade">
+        <input type="text" class="form-control" id="grade" name = "grade" placeholder="Enter grade">
       </div>
     </div>
     
@@ -62,8 +62,6 @@
   </form>
 </div>
 
-
-${avg}
 
 </body>
 </html>
