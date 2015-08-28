@@ -116,19 +116,7 @@ public class gradebook extends HttpServlet {
 			}
 			avg = sum/counter; 
 			
-			/*
-			try {
-				message= "<thead><tr><th>Asignment</th><th>Grade</th></tr></thead>";
-				while(result.next()){
-				    //System.out.println("Current Date from Oracle : " +         result.getString("current_day"));
-					//System.out.printf("%s %s, %s\n",
-					
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			*/
+			
 			
 			System.out.println(message);
 		  response.setContentType("text/html");
